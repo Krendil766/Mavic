@@ -2,4 +2,208 @@
 @import "libs";
 @import "fonts";
 @import "global";
+.header {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 15px;
+        line-height: 17px;
+        @extend %ubuntu-medium;
+        .logo {
+            margin-right: 128px;
+        }
+        .menu {
+            &__list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &-item {
+                    &+li {
+                        margin-left: 20px;
+                    }
+                    &:last-child {
+                        margin-right: 64px;
+                    }
+                }
+            }
+        }
+        .header__info {
+            .header__btn {
+                padding: 6px 28px;
+                background-color: inherit;
+                border: 1px solid #ffffff;
+                border-radius: 3px;
+                color: #FFFFFF;
+                cursor: pointer;
+                margin-right: 8px;
+                transition: all linear .4s;
+                &:hover {
+                    background-color: #ffffff;
+                    color: #1C1C1C;
+                }
+            }
+            .header__phone {
+                font-size: 16px;
+                line-height: 18px;
+                @extend %ubuntu-bold
+            }
+        }
+    }
+}
+
+
+/* END HEDER */
+
+.top {
+    background-image: url('../images/header/header_bg.png');
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+        opacity: 0.4;
+    }
+    .page-section__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    &__title {
+        font-size: 96px;
+        line-height: 115px;
+        @extend %sf-semibold;
+        margin-bottom: 25px;
+    }
+    &__text {
+        max-width: 325px;
+        line-height: 150%;
+        margin: 25px 0 35px;
+    }
+    &__social-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .top__social-item:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+    &__social-link {
+        opacity: .5;
+        transition: all linear .4s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+/* END TOP */
+
+.products {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 56px;
+        margin-right: 50px;
+    }
+    &__text {
+        max-width: 440px;
+        line-height: 150%;
+        p:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+    &__slider-box {
+        position: relative;
+        margin-top: 150px;
+    }
+    &__slider-text {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+        @extend %ubuntu-medium;
+        max-width: 281px;
+        z-index: 4;
+        position: absolute;
+        left: -250px;
+        bottom: 30px;
+    }
+    &__slider {
+        max-width: 560px;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 300px;
+            border: 4px solid #ffffff;
+            margin: -15px 17px;
+        }
+    }
+}
+
+
+/* END PRODUCTS*/
+
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-end;
+        max-width: 560px;
+    }
+    &__num {
+        font-size: 36px;
+        line-height: 41px;
+        @extend %ubuntu-bold;
+        margin-right: 8px;
+    }
+    &__img {
+        position: relative;
+        margin-right: 32px;
+        img {
+            width: 195px;
+            height: 130px;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 195px;
+            height: 130px;
+            border: 2px solid #FFFFFF;
+            margin: -12px 12px;
+            z-index: -1;
+        }
+    }
+    &__info {
+        &-title {
+            @extend %ubuntu-bold;
+            font-size: 21px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+        &-text {
+            line-height: 130%;
+            max-width: 300px;
+        }
+    }
+}
+
 @import "media";

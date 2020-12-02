@@ -36,23 +36,47 @@ body {
     overflow-x: hidden;
     position: relative;
     color: #ffffff;
+    @extend %ubuntu-light;
+    font-size: 17px;
+    line-height: 26px;
 }
 
 .page-section {
-    min-height: 100vh;
     background-image: url('../images/products/page_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
-    padding: 74px 0 50px;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(107.54deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%);
+        opacity: 0.15;
+    }
+    &__wrapper {
+        min-height: 100vh;
+        padding: 74px 0 50px;
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .container {
     max-width: 1270px;
     padding: 0 15px;
     margin: 0 auto;
-    .title {}
+    .title {
+        @extend %sf-regular;
+        font-size: 44px;
+        line-height: 53px;
+        padding-top: 100px;
+        padding-left: 25px;
+        margin-bottom: 55px;
+    }
 }
 
 .scroll__btn {
@@ -62,4 +86,34 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 2;
+}
+
+.slider-arrows {
+    bottom: -42px;
+    right: 0;
+    position: absolute;
+    padding: 16px 26px;
+    background-color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all linear .4s;
+    border: none;
+    &__left {
+        margin-right: 60px;
+    }
+    svg {
+        stroke: #000000;
+        /* &:first-child {
+            margin-right: 60px;
+        } */
+    }
+    &.slick-arrow.slick-disabled {
+        background-color: #000000;
+        outline: none;
+        svg {
+            stroke: #ffffff;
+        }
+    }
 }
