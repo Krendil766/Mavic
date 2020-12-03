@@ -1,209 +1,401 @@
-@import "vars";
-@import "libs";
-@import "fonts";
-@import "global";
-.header {
-    z-index: 10;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 30px;
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 15px;
-        line-height: 17px;
-        @extend %ubuntu-medium;
-        .logo {
-            margin-right: 128px;
-        }
-        .menu {
-            &__list {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                &-item {
-                    &+li {
-                        margin-left: 20px;
-                    }
-                    &:last-child {
-                        margin-right: 64px;
-                    }
-                }
-            }
-        }
-        .header__info {
-            .header__btn {
-                padding: 6px 28px;
-                background-color: inherit;
-                border: 1px solid #ffffff;
-                border-radius: 3px;
-                color: #FFFFFF;
-                cursor: pointer;
-                margin-right: 8px;
-                transition: all linear .4s;
-                &:hover {
-                    background-color: #ffffff;
-                    color: #1C1C1C;
-                }
-            }
-            .header__phone {
-                font-size: 16px;
-                line-height: 18px;
-                @extend %ubuntu-bold
-            }
-        }
-    }
-}
-
-
-/* END HEDER */
-
-.top {
-    background-image: url('../images/header/header_bg.png');
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
+    @import "vars";
+    @import "libs";
+    @import "fonts";
+    @import "global";
+    .header {
+        z-index: 10;
+        position: fixed;
         left: 0;
         right: 0;
-        bottom: 0;
-        background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
-        opacity: 0.4;
+        top: 30px;
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            line-height: 17px;
+            @extend %ubuntu-medium;
+            .logo {
+                margin-right: 128px;
+            }
+            .menu {
+                &__list {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &-item {
+                        &+li {
+                            margin-left: 20px;
+                        }
+                        &:last-child {
+                            margin-right: 64px;
+                        }
+                    }
+                }
+            }
+            .header__info {
+                .header__btn {
+                    padding: 6px 28px;
+                    background-color: inherit;
+                    border: 1px solid #ffffff;
+                    border-radius: 3px;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                    margin-right: 8px;
+                    transition: all linear .4s;
+                    &:hover {
+                        background-color: #ffffff;
+                        color: #1C1C1C;
+                    }
+                }
+                .header__phone {
+                    font-size: 16px;
+                    line-height: 18px;
+                    @extend %ubuntu-bold
+                }
+            }
+        }
     }
-    .page-section__wrapper {
-        display: flex;
-        align-items: flex-end;
+    /* END HEDER */
+    
+    .top {
+        background-image: url('../images/header/header_bg.png');
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+            opacity: 0.4;
+        }
+        .page-section__wrapper {
+            display: flex;
+            align-items: flex-end;
+        }
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        &__title {
+            font-size: 96px;
+            line-height: 115px;
+            @extend %sf-semibold;
+            margin-bottom: 25px;
+        }
+        &__text {
+            max-width: 325px;
+            line-height: 150%;
+            margin: 25px 0 35px;
+        }
+        &__social-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .top__social-item:not(:last-child) {
+                margin-right: 50px;
+            }
+        }
+        &__social-link {
+            opacity: .5;
+            transition: all linear .4s;
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    &__title {
-        font-size: 96px;
-        line-height: 115px;
-        @extend %sf-semibold;
-        margin-bottom: 25px;
-    }
-    &__text {
-        max-width: 325px;
-        line-height: 150%;
-        margin: 25px 0 35px;
-    }
-    &__social-list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .top__social-item:not(:last-child) {
+    /* END TOP */
+    
+    .products {
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 56px;
             margin-right: 50px;
         }
-    }
-    &__social-link {
-        opacity: .5;
-        transition: all linear .4s;
-        &:hover {
-            opacity: 1;
+        &__text {
+            max-width: 440px;
+            line-height: 150%;
+            p:not(:last-child) {
+                margin-bottom: 40px;
+            }
         }
-    }
-}
-
-
-/* END TOP */
-
-.products {
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 56px;
-        margin-right: 50px;
-    }
-    &__text {
-        max-width: 440px;
-        line-height: 150%;
-        p:not(:last-child) {
-            margin-bottom: 40px;
+        &__slider-box {
+            position: relative;
+            margin-top: 150px;
         }
-    }
-    &__slider-box {
-        position: relative;
-        margin-top: 150px;
-    }
-    &__slider-text {
-        font-size: 24px;
-        line-height: 28px;
-        text-align: right;
-        @extend %ubuntu-medium;
-        max-width: 281px;
-        z-index: 4;
-        position: absolute;
-        left: -250px;
-        bottom: 30px;
-    }
-    &__slider {
-        max-width: 560px;
-        &:before {
-            content: "";
+        &__slider-text {
+            font-size: 24px;
+            line-height: 28px;
+            text-align: right;
+            @extend %ubuntu-medium;
+            max-width: 281px;
+            z-index: 4;
             position: absolute;
-            width: 560px;
-            height: 300px;
-            border: 4px solid #ffffff;
-            margin: -15px 17px;
+            left: -250px;
+            bottom: 30px;
+        }
+        &__slider {
+            max-width: 560px;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 560px;
+                height: 300px;
+                border: 4px solid #ffffff;
+                margin: -15px 17px;
+            }
         }
     }
-}
-
-
-/* END PRODUCTS*/
-
-.benefits {
-    &__items {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    &__item {
-        margin-bottom: 100px;
-        display: flex;
-        align-items: flex-end;
-        max-width: 560px;
-    }
-    &__num {
-        font-size: 36px;
-        line-height: 41px;
-        @extend %ubuntu-bold;
-        margin-right: 8px;
-    }
-    &__img {
-        position: relative;
-        margin-right: 32px;
-        img {
-            width: 195px;
-            height: 130px;
+    /* END PRODUCTS*/
+    
+    .benefits {
+        .benefits__title {
+            margin-bottom: 65px;
         }
-        &:before {
-            content: "";
-            position: absolute;
-            width: 195px;
-            height: 130px;
-            border: 2px solid #FFFFFF;
-            margin: -12px 12px;
-            z-index: -1;
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 25px;
         }
-    }
-    &__info {
-        &-title {
+        &__item {
+            margin-bottom: 90px;
+            display: flex;
+            align-items: flex-start;
+            max-width: 560px;
+            &:nth-child(3n) {
+                margin-bottom: 0;
+                margin-left: 50px;
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 463px;
+                    height: 62px;
+                    background-image: url('../images/benefits/benefists_line_two.svg');
+                    background-repeat: no-repeat;
+                    top: -85px;
+                    left: 115px;
+                }
+            }
+            &:nth-child(even) {
+                transform: translateY(20px);
+                margin-left: 45px;
+            }
+            &:first-child {
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 245px;
+                    height: 45px;
+                    background-image: url('../images/benefits/benefists_line_three.svg');
+                    background-repeat: no-repeat;
+                    top: 30px;
+                    right: -70px;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+                margin-bottom: 0;
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 254px;
+                    height: 39px;
+                    background-image: url('../images/benefits/benefists_line_three.svg');
+                    background-repeat: no-repeat;
+                    top: 0;
+                    left: -245px;
+                }
+            }
+        }
+        &__num {
+            font-size: 36px;
+            line-height: 41px;
             @extend %ubuntu-bold;
-            font-size: 21px;
-            line-height: 24px;
-            margin-bottom: 10px;
+            margin-right: 8px;
+            padding-top: 95px;
         }
-        &-text {
-            line-height: 130%;
-            max-width: 300px;
+        &__img {
+            position: relative;
+            margin-right: 32px;
+            img {
+                width: 195px;
+                height: 130px;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 195px;
+                height: 130px;
+                border: 2px solid #FFFFFF;
+                margin: -12px 12px;
+                z-index: -1;
+            }
+        }
+        &__info {
+            &-title {
+                display: flex;
+                flex-direction: column;
+                @extend %ubuntu-bold;
+                font-size: 21px;
+                line-height: 24px;
+                margin-bottom: 10px;
+            }
+            &-text {
+                line-height: 130%;
+                width: 309px;
+            }
         }
     }
-}
-
-@import "media";
+    /* END BENEFITS*/
+    
+    .specification {
+        .specification-title {
+            margin-bottom: 77px;
+        }
+        &__inner {
+            padding-left: 55px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        &__item {
+            &:nth-child(2) {
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                top: 21%;
+            }
+            .specification__box {
+                max-width: 280px;
+                text-align: left;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-repeat: no-repeat;
+                }
+                &-one {
+                    margin-bottom: 140px;
+                    &:before {
+                        width: 229px;
+                        height: 116px;
+                        top: 14px;
+                        left: 180px;
+                        background-image: url('../images/specification/specification_one.svg');
+                    }
+                }
+                &-two:before {
+                    width: 346px;
+                    height: 81px;
+                    top: -64px;
+                    left: 202px;
+                    background-image: url('../images/specification/specification_two.svg');
+                    z-index: 1;
+                }
+                &-three {
+                    margin-bottom: 160px;
+                    &:before {
+                        width: 258px;
+                        height: 104px;
+                        top: 14px;
+                        left: -275px;
+                        background-image: url('../images/specification/specification_three.svg');
+                    }
+                }
+                &-four:before {
+                    width: 124px;
+                    height: 89px;
+                    top: -72px;
+                    left: -138px;
+                    background-image: url('../images/specification/specification_four.svg');
+                }
+                &-title {
+                    @extend %ubuntu-bold;
+                    font-size: 21px;
+                    line-height: 28px;
+                    margin-bottom: 10px;
+                }
+                &-text {
+                    font-size: 15px;
+                    line-height: 130%;
+                }
+            }
+        }
+    }
+    /* END SPECIFICTION*/
+    
+    .questions {
+        &__items {
+            padding-left: 25px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 48px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 319px;
+                height: 125px;
+                bottom: 30px;
+                left: 787px;
+                background-image: url('../images/questions/questions_dron.png');
+            }
+        }
+        &__item {
+            max-width: 690px;
+            height: auto;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: left;
+            padding: 20px 0 24px 39px;
+            color: rgba($color: #fff, $alpha: 0.8);
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+            &-active {
+                .questions__item-text {
+                    display: flex;
+                }
+                .questions__item-title::before {
+                    transform: rotate(180deg);
+                }
+            }
+            &-title {
+                font-size: 21px;
+                line-height: 28px;
+                @extend %ubuntu-medium;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 72px;
+                    height: 67px;
+                    background-color: #fff;
+                    background-image: url('../images/questions/questions_arrow.svg');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    right: -72px;
+                    top: 0px;
+                    cursor: pointer;
+                }
+            }
+            &-text {
+                font-size: 15px;
+                line-height: 150%;
+                padding-left: 11px;
+                display: none;
+                @extend %four-transition;
+                margin-bottom: 45px;
+            }
+        }
+    }
+    
+    @import "media";
