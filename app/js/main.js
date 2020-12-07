@@ -10,5 +10,11 @@ $(function() {
         $('.questions__item').removeClass('questions__item-active');
         $(this).parent().addClass('questions__item-active');
         console.log('+');
-    })
+    });
+    $('#fullpage').fullpage({
+        //options here
+        autoScrolling: true,
+        scrollHorizontally: true,
+        sectionSelector: '.page-section',
+    });
 });
