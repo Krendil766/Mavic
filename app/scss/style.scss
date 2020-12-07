@@ -15,21 +15,46 @@
                 font-size: 15px;
                 line-height: 17px;
                 @extend %ubuntu-medium;
-                .logo {
-                    margin-right: 128px;
-                }
                 .menu {
+                    &__btn {
+                        display: none;
+                    }
                     &__list {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        &-item {
+                        white-space: nowrap;
+                        &-item,
+                        &-phone {
+                            a {
+                                position: relative;
+                                width: 100%;
+                                opacity: .5;
+                                transition: all linear .4s;
+                            }
+                            &.active {
+                                a {
+                                    opacity: 1;
+                                }
+                                a:before {
+                                    content: "";
+                                    display: block;
+                                    width: 100%;
+                                    height: 2px;
+                                    background-color: #fff;
+                                    position: absolute;
+                                    bottom: -4px;
+                                }
+                            }
                             &+li {
                                 margin-left: 20px;
                             }
                             &:last-child {
                                 margin-right: 64px;
                             }
+                        }
+                        &-phone {
+                            display: block;
                         }
                     }
                 }
